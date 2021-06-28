@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import Form from '../elements/Form'
+import '../../style/search.css'
 
 function Search() {
     const [name, setName] = useState('')
@@ -19,7 +20,7 @@ function Search() {
         return (
             <main>
                 <p>Search a user</p>
-                
+
                 <Form 
                     name={name}
                     handleName={handleName}

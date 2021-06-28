@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import Commits from '../elements/Commits'
 import Details from '../elements/Details'
 import Repos from '../elements/Repos'
+import '../../style/results.css'
 
 function Results() {
     const location = useLocation()
