@@ -1,13 +1,35 @@
+import { useState } from 'react'
 import Commits from '../elements/Commits'
+import Form from '../sections/Form'
 
 function Home() {
-    return (
-        <main>
-            <h1>Home</h1>
+    const [name, setName] = useState('')
+    const [redirect, setRedirect] = useState(false)
 
-            <Commits />
-        </main>
-    )
+    const handleName = (e) => {
+        setName(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setRedirect(true)
+    }
+
+    if (!redirect) {
+        return (
+            <Form 
+                name={name}
+                handleName={handleName}
+                handleSubmit={handleSubmit}
+            />
+        )
+    } else {
+        return (
+            <Commits 
+                name={name}
+            />
+        )
+    }
 }
 
 export default Home

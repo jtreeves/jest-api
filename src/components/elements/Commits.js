@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import getCommits from '../../utilities/getCommits'
 
-function Commits() {
+function Commits(props) {
     const [commits, setCommits] = useState([])
 
     const renderCommits = async () => {
-        const rawCommits = await getCommits()
+        const rawCommits = await getCommits(props.name)
         const prettyCommits = rawCommits.map((commit, index) => {
             return (
                 <li key={index}>
@@ -18,7 +18,7 @@ function Commits() {
 
     useEffect(() => {
         renderCommits()
-    }, [])
+    })
 
     return (
         <ul>
