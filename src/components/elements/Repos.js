@@ -19,8 +19,10 @@ function Repos(props) {
 
     useEffect(() => {
         renderRepos()
-        return cleanUp
-    })
+        return () => {
+            cleanUp()
+        }
+    }, [])
 
     return (
         <ul>

@@ -12,8 +12,10 @@ function Details(props) {
 
     useEffect(() => {
         renderDetails()
-        return cleanUp()
-    })
+        return () => {
+            cleanUp()
+        }
+    }, [])
 
     return (
         <ul>

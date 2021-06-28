@@ -19,8 +19,10 @@ function Commits(props) {
 
     useEffect(() => {
         renderCommits()
-        return cleanUp()
-    })
+        return () => {
+            cleanUp()
+        }
+    }, [])
 
     return (
         <ul>

@@ -44,33 +44,33 @@ describe('Search page', () => {
     })
 })
 
-// describe('Results page', () => {
-//     it('contains many headings', () => {
-//         render(
-//             <MemoryRouter
-//                 initialEntries={[
-//                     { state: { name: 'jtreeves' } }
-//                 ]}
-//             >
-//                 <Results />
-//             </MemoryRouter>
-//         )
-//         const headings = screen.getAllByRole('heading')
-//         expect(headings.length).toBeGreaterThan(1)
-//     })
+describe('Results page', () => {
+    it('contains many headings', () => {
+        render(
+            <MemoryRouter
+                initialEntries={[
+                    { state: { name: 'jtreeves' } }
+                ]}
+            >
+                <Results />
+            </MemoryRouter>
+        )
+        const headings = screen.getAllByRole('heading')
+        expect(headings.length).toBeGreaterThan(1)
+    })
 
-//     it('contains an initial heading saying Results', () => {
-//         render(
-//             <MemoryRouter
-//                 initialEntries={[
-//                     { state: { name: 'jtreeves' } }
-//                 ]}
-//             >
-//                 <Results />
-//             </MemoryRouter>
-//         )
-//         const headings = screen.getAllByRole('heading')
-//         const pageHeading = screen.getByText('Results')
-//         expect(headings[0]).toBe(pageHeading)
-//     })
-// })
+    it('contains an initial heading saying Results', () => {
+        render(
+            <MemoryRouter
+                initialEntries={[
+                    { state: { name: 'jtreeves' } }
+                ]}
+            >
+                <Results />
+            </MemoryRouter>
+        )
+        const headings = screen.getAllByRole('heading')
+        const pageHeading = screen.getByText('Results')
+        expect(headings[0]).toBe(pageHeading)
+    })
+})
