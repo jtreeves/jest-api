@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import getDetails from '../../utilities/getDetails'
+import cleanUp from '../../utilities/cleanUp'
 
 function Details(props) {
     const [details, setDetails] = useState({})
@@ -11,6 +12,7 @@ function Details(props) {
 
     useEffect(() => {
         renderDetails()
+        return cleanUp()
     })
 
     return (

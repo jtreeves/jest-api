@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import getCommits from '../../utilities/getCommits'
+import cleanUp from '../../utilities/cleanUp'
 
 function Commits(props) {
     const [commits, setCommits] = useState([])
@@ -18,6 +19,7 @@ function Commits(props) {
 
     useEffect(() => {
         renderCommits()
+        return cleanUp()
     })
 
     return (

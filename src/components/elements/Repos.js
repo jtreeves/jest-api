@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import getRepos from '../../utilities/getRepos'
+import cleanUp from '../../utilities/cleanUp'
 
 function Repos(props) {
     const [repos, setRepos] = useState([])
@@ -18,6 +19,7 @@ function Repos(props) {
 
     useEffect(() => {
         renderRepos()
+        return cleanUp
     })
 
     return (
