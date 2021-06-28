@@ -13,7 +13,7 @@ function Form(props) {
             />
 
             <button onClick={props.handleSubmit}>
-                Search
+                Search GitHub
             </button>
         </form>
     )
