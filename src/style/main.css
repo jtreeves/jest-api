@@ -1,7 +1,21 @@
-h1 {
-    color: blue;
+header, h1, h2, footer {
+    text-align: center;
 }
 
-p {
-    color: red;
+header {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+footer {
+    font-style: italic;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 25px;
 }

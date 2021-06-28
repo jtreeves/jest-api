@@ -10,6 +10,8 @@ function Results() {
 
     return (
         <main>
+            <h1>Results</h1>
+            
             <Details 
                 name={name}
             />

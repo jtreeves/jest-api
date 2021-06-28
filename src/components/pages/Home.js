@@ -4,7 +4,9 @@ import '../../style/home.css'
 function Home() {
     return (
         <main>
-            <p>Perform a new search</p>
+            <h1>Welcome!</h1>
+
+            <p>Use this website to easily find information about GitHub users. Just input their usernames, and see the results!</p>
 
             <Link to="/search">
                 <button>

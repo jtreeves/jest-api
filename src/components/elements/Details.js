@@ -15,6 +15,7 @@ function Details(props) {
 
     return (
         <ul>
+            <h2>Details</h2>
             <li>Name: {details.name}</li>
             <li>Bio: {details.bio}</li>
             <li>Location: {details.location}</li>

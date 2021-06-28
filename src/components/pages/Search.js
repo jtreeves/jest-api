@@ -19,7 +19,9 @@ function Search() {
     if (!clicked) {
         return (
             <main>
-                <p>Search a user</p>
+                <h1>Search</h1>
+
+                <p>Enter the user's GitHub handle to see lists of their recent repos and commits, along with other basic details.</p>
 
                 <Form 
                     name={name}

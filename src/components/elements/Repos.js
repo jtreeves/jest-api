@@ -22,6 +22,7 @@ function Repos(props) {
 
     return (
         <ul>
+            <h2>Repos</h2>
             {repos}
         </ul>
     )

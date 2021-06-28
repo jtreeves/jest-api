@@ -22,6 +22,7 @@ function Commits(props) {
 
     return (
         <ul>
+            <h2>Commits</h2>
             {commits}
         </ul>
     )
