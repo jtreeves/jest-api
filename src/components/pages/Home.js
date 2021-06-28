@@ -1,35 +1,17 @@
-import { useState } from 'react'
-import Search from '../sections/Search'
-import Results from '../sections/Results'
+import { Link } from 'react-router-dom'
 
 function Home() {
-    const [name, setName] = useState('')
-    const [redirect, setRedirect] = useState(false)
+    return (
+        <main>
+            <p>Perform a new search</p>
 
-    const handleName = (e) => {
-        setName(e.target.value)
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setRedirect(true)
-    }
-
-    if (!redirect) {
-        return (
-            <Search 
-                name={name}
-                handleName={handleName}
-                handleSubmit={handleSubmit}
-            />
-        )
-    } else {
-        return (
-            <Results 
-                name={name}
-            />
-        )
-    }
+            <Link to="/search">
+                <button>
+                    New Search
+                </button>
+            </Link>
+        </main>
+    )
 }
 
 export default Home

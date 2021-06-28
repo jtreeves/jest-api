@@ -1,4 +1,4 @@
-function Search(props) {
+function Form(props) {
     return (
         <form>
             <label htmlFor="name">
@@ -19,4 +19,4 @@ function Search(props) {
     )
 }
 
-export default Search
+export default Form
