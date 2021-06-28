@@ -9,6 +9,7 @@ function Navigation() {
             >
                 Home
             </NavLink>
+            
             <NavLink
                 to="/about"
                 style={{ textDecoration: 'none' }} 

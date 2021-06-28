@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Commits from '../elements/Commits'
-import Form from '../sections/Form'
+import Search from '../sections/Search'
+import Results from '../sections/Results'
 
 function Home() {
     const [name, setName] = useState('')
@@ -17,7 +17,7 @@ function Home() {
 
     if (!redirect) {
         return (
-            <Form 
+            <Search 
                 name={name}
                 handleName={handleName}
                 handleSubmit={handleSubmit}
@@ -25,7 +25,7 @@ function Home() {
         )
     } else {
         return (
-            <Commits 
+            <Results 
                 name={name}
             />
         )

@@ -1,9 +1,10 @@
 import axios from 'axios'
+import apiUrl from './apiUrl'
 
 async function getCommits(name) {
     try {
-        const githubUrl = 'https://api.github.com/users/' + name + '/events'
-        const results = await axios.get(githubUrl)
+        const fullUrl = apiUrl + name + '/events'
+        const results = await axios.get(fullUrl)
         const commits = results.data.map(result => {
             if (result.payload.commits) {
                 return result.payload.commits[0].message
