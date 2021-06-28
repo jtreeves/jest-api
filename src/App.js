@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom'
-import Header from './components/partials/Header'
-import Footer from './components/partials/Footer'
+import Header from './components/elements/Header'
+import Footer from './components/elements/Footer'
 import Home from './components/pages/Home'
 import Search from './components/pages/Search'
 import Results from './components/pages/Results'
