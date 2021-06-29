@@ -1,4 +1,6 @@
+import axios from 'axios'
 import apiUrl from '../utilities/apiUrl'
+import authorizationHeader from '../utilities/authorizationHeader'
 import getDetails from '../utilities/getDetails'
 import getRepos from '../utilities/getRepos'
 import getCommits from '../utilities/getCommits'
@@ -11,6 +13,24 @@ describe('apiUrl utility', () => {
     
     it('contains URL for GitHub API requests', () => {
         expect(apiUrl).toBe('https://api.github.com/users/')
+    })
+})
+
+describe('authorizationHeader utility', () => {
+    it('returns an object', () => {
+        expect(typeof authorizationHeader).toBe('object')
+    })
+    
+    it('contains key for headers', () => {
+        expect(authorizationHeader.headers).toBeTruthy()
+    })
+    
+    it('contains nested key for authorization', () => {
+        expect(authorizationHeader.headers.Authorization).toBeTruthy()
+    })
+    
+    it('contains token as string within authorization key', () => {
+        expect(typeof authorizationHeader.headers.Authorization).toBe('string')
     })
 })
 
@@ -60,16 +80,12 @@ describe('getCommits utility', () => {
 })
 
 // describe('cleanUp utility', () => {
-//     it('does something', async () => {
+//     it('does something', () => {
 //         // const results = cleanUp()
-//         const results = await fetch('https://google.com')
+//         // const results = await axios.get('https://google.com')
+//         jest.setTimeout(1000)
+//         cleanUp()
 //         console.log('RESULTS: ', results)
 //         expect(1).toBe(2)
 //     })
-    
-//     // it('contains many strings', async () => {
-//     //     const testCommits = await cleanUp('jtreeves')
-//     //     expect(testCommits.length).toBeGreaterThan(1)
-//     //     expect(typeof testCommits[0]).toBe('string')
-//     // })
 // })

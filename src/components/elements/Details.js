@@ -17,17 +17,30 @@ function Details(props) {
         }
     }, [])
 
-    return (
-        <ul>
-            <h2>Details</h2>
-            <li>Name: {details.name}</li>
-            <li>Bio: {details.bio}</li>
-            <li>Location: {details.location}</li>
-            <li>Repos: {details.repos}</li>
-            <li>Followers: {details.followers}</li>
-            <li>Following: {details.following}</li>
-        </ul>
-    )
+    if (typeof details !== 'string') {
+        return (
+            <section>
+                <h2>Details</h2>
+                <ul>
+                    <li>Name: {details.name}</li>
+                    <li>Bio: {details.bio}</li>
+                    <li>Location: {details.location}</li>
+                    <li>Repos: {details.repos}</li>
+                    <li>Followers: {details.followers}</li>
+                    <li>Following: {details.following}</li>
+                </ul>
+            </section>
+        )
+    } else {
+        return (
+            <section>
+                <h2>Details</h2>
+                <ul>
+                    <li>{details}</li>
+                </ul>
+            </section>
+        )
+    }
 }
 
 export default Details

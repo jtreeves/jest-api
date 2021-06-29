@@ -7,14 +7,19 @@ function Commits(props) {
 
     const renderCommits = async () => {
         const rawCommits = await getCommits(props.name)
-        const prettyCommits = rawCommits.map((commit, index) => {
-            return (
-                <li key={index}>
-                    {commit}
-                </li>
-            )
-        })
-        setCommits(prettyCommits)
+        if (typeof rawCommits !== 'string') {
+            const prettyCommits = rawCommits.map((commit, index) => {
+                return (
+                    <li key={index}>
+                        {commit}
+                    </li>
+                )
+            })
+            setCommits(prettyCommits)
+        } else {
+            const message = <li>{rawCommits}</li>
+            setCommits(message)
+        }
     }
 
     useEffect(() => {
@@ -25,10 +30,12 @@ function Commits(props) {
     }, [])
 
     return (
-        <ul>
+        <section>
             <h2>Commits</h2>
-            {commits}
-        </ul>
+            <ul>
+                {commits}
+            </ul>
+        </section>
     )
 }
 

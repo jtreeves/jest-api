@@ -1,9 +1,12 @@
 module.exports = {
     verbose: true,
+    setupFiles: [
+        'dotenv/config'
+    ],
     setupFilesAfterEnv: [
-        "./src/tests/config.js"
+        './src/tests/config.js'
     ],
     moduleNameMapper: {
-        "\\.(css|less)$": "identity-obj-proxy"
+        '\\.(css|less)$': 'identity-obj-proxy'
     }
 }

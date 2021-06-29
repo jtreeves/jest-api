@@ -21,7 +21,7 @@ async function getCommits(name) {
         })
         return trimmedCommits
     } catch (error) {
-        console.log(error)
+        return 'User not found'
     }
 }
 

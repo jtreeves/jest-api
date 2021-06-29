@@ -7,14 +7,19 @@ function Repos(props) {
 
     const renderRepos = async () => {
         const rawRepos = await getRepos(props.name)
-        const prettyRepos = rawRepos.map((repo, index) => {
-            return (
-                <li key={index}>
-                    {repo}
-                </li>
-            )
-        })
-        setRepos(prettyRepos)
+        if (typeof rawRepos !== 'string') {
+            const prettyRepos = rawRepos.map((repo, index) => {
+                return (
+                    <li key={index}>
+                        {repo}
+                    </li>
+                )
+            })
+            setRepos(prettyRepos)
+        } else {
+            const message = <li>{rawRepos}</li>
+            setRepos(message)
+        }
     }
 
     useEffect(() => {
@@ -25,10 +30,12 @@ function Repos(props) {
     }, [])
 
     return (
-        <ul>
+        <section>
             <h2>Repos</h2>
-            {repos}
-        </ul>
+            <ul>
+                {repos}
+            </ul>
+        </section>
     )
 }
 
