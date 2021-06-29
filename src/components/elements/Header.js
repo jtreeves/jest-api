@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header>
-            Easy Search for API
+            Search GitHub Users
         </header>
     )
 }

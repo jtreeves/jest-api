@@ -1,17 +1,13 @@
 import axios from 'axios'
 import apiUrl from './apiUrl'
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+import authorizationHeader from './authorizationHeader'
 
 async function getCommits(name) {
     try {
         const fullUrl = apiUrl + name + '/events'
         const results = await axios.get(
             fullUrl,
-            {
-                headers: {
-                    'Authorization': GITHUB_TOKEN
-                }
-            }
+            authorizationHeader
         )
         const commits = results.data.map(result => {
             if (result.payload.commits) {

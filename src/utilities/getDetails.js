@@ -1,17 +1,13 @@
 import axios from 'axios'
 import apiUrl from './apiUrl'
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+import authorizationHeader from './authorizationHeader'
 
 async function getDetails(name) {
     try {
         const fullUrl = apiUrl + name
         const results = await axios.get(
             fullUrl,
-            {
-                headers: {
-                    'Authorization': GITHUB_TOKEN
-                }
-            }
+            authorizationHeader
         )
         const details = {
             name: results.data.name,
