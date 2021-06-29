@@ -53,6 +53,14 @@ describe('getDetails utility', () => {
         expect(testDetails.name).toBeTruthy()
         expect(testDetails.location).toBeTruthy()
     })
+
+    it('returns string on error', async () => {
+        try {
+            await getDetails('ga-jtreeves')
+        } catch (error) {
+            expect(error).toBe('User not found')
+        }
+    })
 })
 
 describe('getRepos utility', () => {
@@ -66,6 +74,14 @@ describe('getRepos utility', () => {
         expect(testRepos.length).toBeGreaterThan(1)
         expect(typeof testRepos[0]).toBe('string')
     })
+
+    it('returns string on error', async () => {
+        try {
+            await getRepos('ga-jtreeves')
+        } catch (error) {
+            expect(error).toBe('User not found')
+        }
+    })
 })
 
 describe('getCommits utility', () => {
@@ -78,5 +94,13 @@ describe('getCommits utility', () => {
         const testCommits = await getCommits('jtreeves')
         expect(testCommits.length).toBeGreaterThan(1)
         expect(typeof testCommits[0]).toBe('string')
+    })
+    
+    it('returns string on error', async () => {
+        try {
+            await getCommits('ga-jtreeves')
+        } catch (error) {
+            expect(error).toBe('User not found')
+        }
     })
 })
