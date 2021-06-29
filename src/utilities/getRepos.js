@@ -14,7 +14,7 @@ async function getRepos(name) {
         })
         return repos
     } catch (error) {
-        return 'User not found'
+        throw 'User not found'
     }
 }
 

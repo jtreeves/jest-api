@@ -6,8 +6,8 @@ function Commits(props) {
     const [commits, setCommits] = useState([])
 
     const renderCommits = async () => {
-        const rawCommits = await getCommits(props.name)
-        if (typeof rawCommits !== 'string') {
+        try {
+            const rawCommits = await getCommits(props.name)
             const prettyCommits = rawCommits.map((commit, index) => {
                 return (
                     <li key={index}>
@@ -16,8 +16,8 @@ function Commits(props) {
                 )
             })
             setCommits(prettyCommits)
-        } else {
-            const message = <li>{rawCommits}</li>
+        } catch (error) {
+            const message = <li>{error}</li>
             setCommits(message)
         }
     }

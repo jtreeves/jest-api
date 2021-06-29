@@ -82,9 +82,12 @@ describe('getCommits utility', () => {
 // describe('cleanUp utility', () => {
 //     it('does something', () => {
 //         // const results = cleanUp()
-//         // const results = await axios.get('https://google.com')
-//         jest.setTimeout(1000)
-//         cleanUp()
+//         const controller = new AbortController()
+//         const signal = controller.signal
+//         const results = axios({method: 'get', url: 'https://api.github.com/users/jtreeves/events', signal})
+//         // jest.setTimeout(1000)
+//         // cleanUp()
+//         controller.abort()
 //         console.log('RESULTS: ', results)
 //         expect(1).toBe(2)
 //     })

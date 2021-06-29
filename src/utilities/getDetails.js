@@ -19,7 +19,7 @@ async function getDetails(name) {
         }
         return details
     } catch (error) {
-        return 'User not found'
+        throw 'User not found'
     }
 }
 

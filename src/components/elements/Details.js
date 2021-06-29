@@ -6,8 +6,13 @@ function Details(props) {
     const [details, setDetails] = useState({})
 
     const renderDetails = async () => {
-        const rawDetails = await getDetails(props.name)
-        setDetails(rawDetails)
+        try {
+            const rawDetails = await getDetails(props.name)
+            setDetails(rawDetails)
+        } catch (error) {
+            const message = error
+            setDetails(message)
+        }
     }
 
     useEffect(() => {

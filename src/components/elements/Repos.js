@@ -6,8 +6,8 @@ function Repos(props) {
     const [repos, setRepos] = useState([])
 
     const renderRepos = async () => {
-        const rawRepos = await getRepos(props.name)
-        if (typeof rawRepos !== 'string') {
+        try {
+            const rawRepos = await getRepos(props.name)
             const prettyRepos = rawRepos.map((repo, index) => {
                 return (
                     <li key={index}>
@@ -16,8 +16,8 @@ function Repos(props) {
                 )
             })
             setRepos(prettyRepos)
-        } else {
-            const message = <li>{rawRepos}</li>
+        } catch (error) {
+            const message = <li>{error}</li>
             setRepos(message)
         }
     }
