@@ -1,10 +1,8 @@
-import axios from 'axios'
 import apiUrl from '../utilities/apiUrl'
 import authorizationHeader from '../utilities/authorizationHeader'
 import getDetails from '../utilities/getDetails'
 import getRepos from '../utilities/getRepos'
 import getCommits from '../utilities/getCommits'
-import cleanUp from '../utilities/cleanUp'
 
 describe('apiUrl utility', () => {
     it('returns a string', () => {
@@ -78,17 +76,3 @@ describe('getCommits utility', () => {
         expect(typeof testCommits[0]).toBe('string')
     })
 })
-
-// describe('cleanUp utility', () => {
-//     it('does something', () => {
-//         // const results = cleanUp()
-//         const controller = new AbortController()
-//         const signal = controller.signal
-//         const results = axios({method: 'get', url: 'https://api.github.com/users/jtreeves/events', signal})
-//         // jest.setTimeout(1000)
-//         // cleanUp()
-//         controller.abort()
-//         console.log('RESULTS: ', results)
-//         expect(1).toBe(2)
-//     })
-// })
