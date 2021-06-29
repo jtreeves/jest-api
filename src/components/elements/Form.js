@@ -8,6 +8,7 @@ function Form(props) {
             <input 
                 type="text" 
                 name="name" 
+                id="name"
                 value={props.name} 
                 onChange={props.handleName} 
             />

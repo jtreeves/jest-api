@@ -30,6 +30,10 @@ describe('authorizationHeader utility', () => {
     it('contains token as string within authorization key', () => {
         expect(typeof authorizationHeader.headers.Authorization).toBe('string')
     })
+    
+    it('contains secret API token', () => {
+        expect(authorizationHeader.headers.Authorization).toBe(process.env.GITHUB_TOKEN)
+    })
 })
 
 describe('getDetails utility', () => {
