@@ -46,7 +46,7 @@ describe('Search page', () => {
 
 describe('Results page', () => {
     it('contains many headings', () => {
-        await act(async () => {
+        act(() => {
             render(
                 <MemoryRouter
                     initialEntries={[
@@ -62,7 +62,7 @@ describe('Results page', () => {
     })
 
     it('contains an initial heading saying Results', () => {
-        await act(async () => {
+        act(() => {
             render(
                 <MemoryRouter
                     initialEntries={[

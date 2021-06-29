@@ -2,6 +2,7 @@ import apiUrl from '../utilities/apiUrl'
 import getDetails from '../utilities/getDetails'
 import getRepos from '../utilities/getRepos'
 import getCommits from '../utilities/getCommits'
+import cleanUp from '../utilities/cleanUp'
 
 describe('apiUrl utility', () => {
     it('returns a string', () => {
@@ -57,3 +58,18 @@ describe('getCommits utility', () => {
         expect(typeof testCommits[0]).toBe('string')
     })
 })
+
+// describe('cleanUp utility', () => {
+//     it('does something', async () => {
+//         // const results = cleanUp()
+//         const results = await fetch('https://google.com')
+//         console.log('RESULTS: ', results)
+//         expect(1).toBe(2)
+//     })
+    
+//     // it('contains many strings', async () => {
+//     //     const testCommits = await cleanUp('jtreeves')
+//     //     expect(testCommits.length).toBeGreaterThan(1)
+//     //     expect(typeof testCommits[0]).toBe('string')
+//     // })
+// })
