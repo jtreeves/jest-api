@@ -2,7 +2,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 
 const authorizationHeader = {
     headers: {
-        'Authorization': GITHUB_TOKEN
+        'Authorization': 'token ' + GITHUB_TOKEN
     }
 }
 
