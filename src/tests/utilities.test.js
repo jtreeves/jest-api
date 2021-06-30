@@ -1,5 +1,6 @@
 import apiUrl from '../utilities/apiUrl'
 import authorizationHeader from '../utilities/authorizationHeader'
+import vetRequest from '../utilities/vetRequest'
 import getDetails from '../utilities/getDetails'
 import getRepos from '../utilities/getRepos'
 import getCommits from '../utilities/getCommits'
@@ -32,7 +33,27 @@ describe('authorizationHeader utility', () => {
     })
     
     it('contains secret API token', () => {
-        expect(authorizationHeader.headers.Authorization).toBe(process.env.GITHUB_TOKEN)
+        expect(authorizationHeader.headers.Authorization).toBe('token ' + process.env.GITHUB_TOKEN)
+    })
+})
+
+describe('vetRequest utility', () => {
+    it('returns an object', async () => {
+        const testVet = await vetRequest('https://api.github.com/users/jtreeves')
+        expect(typeof testVet).toBe('object')
+    })
+    
+    it('contains a key called data', async () => {
+        const testVet = await vetRequest('https://api.github.com/users/jtreeves')
+        expect(testVet.data).toBeTruthy()
+    })
+
+    it('returns error message if no user exists', async () => {
+        try {
+            await vetRequest('https://api.github.com/users/ga-jtreeves')
+        } catch (error) {
+            expect(error).toBe('User not found')
+        }
     })
 })
 
