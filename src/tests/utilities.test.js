@@ -50,8 +50,8 @@ describe('getDetails utility', () => {
     
     it('contains keys for name and location', async () => {
         const testDetails = await getDetails('jtreeves')
-        expect(testDetails.name).toBeTruthy()
-        expect(testDetails.location).toBeTruthy()
+        expect(testDetails.name).toBe('Jackson Reeves')
+        expect(testDetails.location).toBe('Atlanta, GA')
     })
 
     it('returns string on error', async () => {

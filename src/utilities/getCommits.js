@@ -1,14 +1,10 @@
-import axios from 'axios'
 import apiUrl from './apiUrl'
-import authorizationHeader from './authorizationHeader'
+import vetRequest from './vetRequest'
 
 async function getCommits(name) {
     try {
         const fullUrl = apiUrl + name + '/events'
-        const results = await axios.get(
-            fullUrl,
-            authorizationHeader
-        )
+        const results = await vetRequest(fullUrl)
         const commits = results.data.map(result => {
             if (result.payload.commits) {
                 return result.payload.commits[0].message
@@ -21,7 +17,7 @@ async function getCommits(name) {
         })
         return trimmedCommits
     } catch (error) {
-        throw 'User not found'
+        throw error
     }
 }
 

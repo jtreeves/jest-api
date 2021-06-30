@@ -1,14 +1,10 @@
-import axios from 'axios'
 import apiUrl from './apiUrl'
-import authorizationHeader from './authorizationHeader'
+import vetRequest from './vetRequest'
 
 async function getDetails(name) {
     try {
         const fullUrl = apiUrl + name
-        const results = await axios.get(
-            fullUrl,
-            authorizationHeader
-        )
+        const results = await vetRequest(fullUrl)
         const details = {
             name: results.data.name,
             bio: results.data.bio,
@@ -19,7 +15,7 @@ async function getDetails(name) {
         }
         return details
     } catch (error) {
-        throw 'User not found'
+        throw error
     }
 }
 

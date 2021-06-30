@@ -33,7 +33,7 @@ describe('Footer element', () => {
         expect(section).toBeTruthy()
     })
     
-    it('contains copyright information', async () => {
+    it('contains copyright information', () => {
         render(
             <Footer />
         )
